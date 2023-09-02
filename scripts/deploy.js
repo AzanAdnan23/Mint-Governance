@@ -9,7 +9,6 @@ async function main() {
     from: owner.address,
     nonce: transactionCount + 1
   });
-  
 
   const MyGovernor = await ethers.getContractFactory("MyGovernor");
   const governor = await MyGovernor.deploy(futureAddress);
