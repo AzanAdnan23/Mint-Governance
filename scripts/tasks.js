@@ -13,8 +13,6 @@ async function task() {
   );
 
   await token.delegate(owner.address);
-  //console.log(governor);
-
 
   const tx = await governor.propose(
     [token.address],
@@ -28,10 +26,7 @@ async function task() {
     "Give the owner more token"
   );
 
-  //console.log("transaction", tx);
-
   const receipt = await tx.wait();
-  //console.log("reciept", receipt);
 
   const event = receipt.events.find((x) => x.event === "ProposalCreated");
   const { proposalId } = event.args;
@@ -49,9 +44,6 @@ async function task() {
     ],
     keccak256(toUtf8Bytes("Give the owner more tokens!"))
   );
-
-
-
 }
 
 task().catch((error) => {
