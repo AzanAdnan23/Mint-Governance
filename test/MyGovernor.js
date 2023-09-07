@@ -9,6 +9,7 @@ describe("MyGovernor", function () {
 
     const transactionCount = await owner.getTransactionCount();
   
+    
     // gets the address of the token before it is deployed
     const futureAddress = ethers.utils.getContractAddress({
       from: owner.address,
